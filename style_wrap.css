@@ -49,7 +49,6 @@ header {
     width: 470px;
     height: 20px;
     display: flex;
-    padding: 0 10px;
     justify-content: flex-end;
 }
 
@@ -57,9 +56,21 @@ header > svg {
     width:20px;
     height:20px;
     opacity: 0;
-    transform: translate(0px, 5px);
     stroke: none;
+    transform: translate(0px, 5px);
     filter: drop-shadow(0px 0px 1px black);
+}
+
+#refMove {
+    transform: none;
+    opacity: 100%; 
+    -webkit-app-region: drag;
+    cursor:move;
+}
+
+#dot, #dot:hover {
+    cursor: default;
+    transform: none;
 }
 
 header:hover > svg {
