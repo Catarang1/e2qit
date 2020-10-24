@@ -1,14 +1,15 @@
 const { app, BrowserWindow } = require('electron')
 const electron = require('electron')
-const remote = electron.remote
+
+var win;
 
 function createWindow () {
-  const win = new BrowserWindow({
+  win = new BrowserWindow({
     width: 510,
     height: 135,
     frame: false,
     transparent: true,
-    resizable: true,
+    resizable: false,
     webPreferences: {
       nodeIntegration: true
     }
@@ -17,6 +18,21 @@ function createWindow () {
   win.loadFile('index.html')
   //win.webContents.openDevTools()
 }
+
+const { ipcMain } = require('electron')
+
+ipcMain.handle('close', (event, ...args) => {
+  app.quit()
+})
+
+ipcMain.handle('mini', (event, ...args) => {
+  win.minimize()
+})
+
+ipcMain.handle('git', (event, ...args) => {
+  const {shell} = require('electron');
+  shell.openExternal("https://github.com/Catarang1/e2qit")
+})
 
 app.whenReady().then(createWindow)
 

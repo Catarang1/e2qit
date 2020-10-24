@@ -2,6 +2,9 @@
 // * electron integration
 // * shutdown, exit app, minimalize fxs /w Node
 
+//electron
+const { ipcRenderer, remote } = require('electron');
+
 //elements
 var left;
 var right;
@@ -130,10 +133,14 @@ function shutdown() {
     console.log('shudown')
 }
 
-function minimize() {
-
+function mini() {
+    ipcRenderer.invoke('mini', null)
 }
 
 function exit(){
+    ipcRenderer.invoke('close', null)
+}
 
+function git(){
+    ipcRenderer.invoke('git', null)
 }

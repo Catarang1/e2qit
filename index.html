@@ -15,9 +15,9 @@
             <svg id="refTen" onmousedown="addMinutes(10)"  style="display: none;"><use href="#ten"/></svg>
             <svg id="refHour" onmousedown="addMinutes(60)"  style="display: none;"><use href="#hour"/></svg>
             <svg id="refMove"><use href="#move"/></svg>
-            <svg><use href="#git"/></svg>
-            <svg><use href="#bar"/></svg>
-            <svg><use href="#cross"/></svg>
+            <svg onclick="git()"><use href="#git"/></svg>
+            <svg onclick="mini()"><use href="#bar"/></svg>
+            <svg onclick="exit()"><use href="#cross"/></svg>
         </header>
 
         <div id="content-wrap">
@@ -37,7 +37,6 @@
                     <svg id="first-stroke" viewBox="0 0 5 5"><path d="M1 1L4 4"/></svg>
                     <svg id="second-stroke" viewBox="0 0 5 5"><path d="M4 1L1 4"/></svg>
                 </div>
-                
             </div>
         </div>
     </div>
@@ -59,13 +58,13 @@
 </svg>
 
 <svg display="none">
-    <symbol width="20" height="20" viewBox="0 0 20 20" onclick="minimize()" id="bar">
+    <symbol width="20" height="20" viewBox="0 0 20 20" id="bar">
         <path d="M13.5,8.75c0.55,0,1,0.45,1,1v0.5c0,0.55-0.45,1-1,1h-7c-0.55,0-1-0.45-1-1v-0.5c0-0.55,0.45-1,1-1H13.5z"/>
     </symbol>
 </svg>
 
 <svg display="none">
-    <symbol width="20" height="20" viewBox="0 0 20 20" onclick="exit()" id="cross">
+    <symbol width="20" height="20" viewBox="0 0 20 20" id="cross">
         <path d="M13.36,8.41c0.39-0.39,0.39-1.03,0-1.41l-0.35-0.35c-0.39-0.39-1.03-0.39-1.41,0l-0.88,0.88c-0.39,0.39-1.03,0.39-1.41,0
     L8.41,6.64c-0.39-0.39-1.03-0.39-1.41,0L6.64,6.99c-0.39,0.39-0.39,1.03,0,1.41l0.88,0.88c0.39,0.39,0.39,1.03,0,1.41l-0.88,0.88
     c-0.39,0.39-0.39,1.03,0,1.41l0.35,0.35c0.39,0.39,1.03,0.39,1.41,0l0.88-0.88c0.39-0.39,1.03-0.39,1.41,0l0.88,0.88
@@ -121,7 +120,7 @@
 </svg>
 
 <svg display="none">
-    <symbol width="20" height="20" viewBox="0 0 20 20" onclick="exit()" id="move">
+    <symbol width="20" height="20" viewBox="0 0 20 20" id="move">
         <path d="M14.73,9.46l-1.88-1.08c-0.17-0.1-0.37-0.1-0.54,0c-0.17,0.1-0.27,0.28-0.27,0.47v0.54h-1.5v-1.5h0.54
 	c0.19,0,0.37-0.1,0.47-0.27c0.1-0.17,0.1-0.37,0-0.54L10.47,5.2c-0.19-0.34-0.74-0.34-0.94,0L8.45,7.08c-0.1,0.17-0.1,0.37,0,0.54
 	c0.1,0.17,0.28,0.27,0.47,0.27h0.54v1.5h-1.5V8.85c0-0.19-0.1-0.37-0.27-0.47c-0.17-0.1-0.37-0.1-0.54,0L5.27,9.46
