@@ -10,6 +10,10 @@
   "author": "",
   "license": "ISC",
   "devDependencies": {
-    "electron": "^10.1.4"
+    "electron": "^10.1.4",
+    "electron-packager": "^15.1.0"
+  },
+  "dependencies": {
+    "electron-shutdown-command": "^2.0.1"
   }
 }

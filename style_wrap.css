@@ -15,7 +15,6 @@
 }
 
 :root {
-
     --PrimarySetup: #0892ff;
     --PrimaryArmed: #ef073f;
     --DarkBG:       #181818;
@@ -62,14 +61,11 @@ header > svg {
 }
 
 #refMove {
-    transform: none;
     opacity: 100%; 
     -webkit-app-region: drag;
-    cursor:move;
 }
 
-#dot, #dot:hover {
-    cursor: default;
+#dot, #dot:hover, #refMove {
     transform: none;
 }
 
@@ -92,5 +88,3 @@ header:hover > svg:hover {
     background: var(--DarkBG);
     padding: 10px;
 }
-
-/*  -webkit-app-region: drag;

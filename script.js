@@ -131,6 +131,14 @@ function addMinutes(minutes) {
 
 function shutdown() {
     console.log('shudown')
+    const sd = require('electron-shutdown-command');
+    sd.shutdown({
+        force: true,
+        timerseconds: 0,
+        sudo: true,
+        debug: false,
+        quitapp: true
+      })
 }
 
 function mini() {

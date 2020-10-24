@@ -1,0 +1,2 @@
+electron-packager . e2qit --platform="win32" --arch="x64"
+**WIN
