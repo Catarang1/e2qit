@@ -10,12 +10,11 @@ export default class App extends Component {
 	state = { ...Data };
 
 	render() {
-		const { tasks, name, created } = this.state.workgroups[0]
 		return (
 			<React.Fragment>
-				<Menu workgroups={this.state.workgroups} />
+				<Menu projects={this.state.projects} />
 				<Separator />
-				<Scrollwrap tasks={tasks} name={name} created={created}/>
+				<Scrollwrap project={this.state.projects[0]}/>
 				<MessageBox type='context' icon='notification' text='somehint'/>
 			</React.Fragment>
 		);

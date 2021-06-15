@@ -6,13 +6,13 @@ export default class Menu extends Component {
 		return (
 			<div id="menu" style={this.style}>
 				<button><div className="tooltip">Add Project</div></button>
-				{this.props.workgroups.map((workgroup) => {
+				{this.props.projects.map((project) => {
 					return (
 					<button
-						className={workgroup.ico + " workgroup"}
-						key={this.props.workgroups.indexOf(workgroup)}
+						className={project.ico + " workgroup"}
+						key={this.props.projects.indexOf(project)}
 					>
-						<div className="tooltip">{workgroup.name}</div>
+						<div className="tooltip">{project.name}</div>
 					</button>
 					);
 				})}

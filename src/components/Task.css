@@ -18,10 +18,17 @@
 .tab > *:not(:first-child) {
 	margin-bottom: 12px;
 }
+
 .tab_border.red {background: var(--red-grad);}
 .tab_border.green {background: var(--green-grad);}
 .tab_border:not(:last-child) {margin-right: 42px;}
 
 .tab h1 {
 	text-transform: capitalize;
+}
+
+.tab_border:first-child ul, .tab_border:first-child ul>li, .tab_border:first-child ul>li>span {
+	list-style: none;
+	margin-left: 0;
+	font-size: 16px;
 }

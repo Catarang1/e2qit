@@ -1,9 +1,8 @@
 import React, { Component } from 'react';
-import '../components/Separator.css'
 
 export default class Separator extends Component {
-	state = {  }
+	style = { height: '5%', borderRight: '5px dotted white' }
 	render() {
-		return ( <div className="separator"></div> );
+		return ( <div style={this.style} className="separator"></div> );
 	}
 }

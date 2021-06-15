@@ -1,9 +1,0 @@
-#scrollwrap {
-	flex-grow: 1;
-	/* border: thin solid white; */
-	min-height: 100px;
-	height: 100%;
-	overflow: scroll hidden;
-	display: flex;
-	align-items: center;
-}

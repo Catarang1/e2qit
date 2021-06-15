@@ -14,7 +14,6 @@ export default class Task extends Component {
 		this.completed()
 		return (
 			<div className={"tab_border " + (this.completed() ? "green" : "red")}>
-
 				<div className="tab">
 					<p>Completed by: </p>
 					<h1>{this.props.name}</h1>

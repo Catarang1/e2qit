@@ -1,5 +1,5 @@
 export const Data = {
-	workgroups: [
+	projects: [
 		{
 			name: "some name",
 			created: "42. 32. 2023",
@@ -57,7 +57,7 @@ export const Data = {
 						},
 						{
 							description: "description of task",
-							done: false,
+							done: true,
 							notes: ["note to description one"],
 						},
 					],

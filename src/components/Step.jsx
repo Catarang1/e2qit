@@ -1,8 +1,7 @@
 import React, { Component } from 'react';
 import './Step.css'
 
-class Step extends Component {
-	state = {  }
+export default class Step extends Component {
 
 	renderCheckbox() {
 		if (this.props.done) {
@@ -17,7 +16,6 @@ class Step extends Component {
 					{this.renderCheckbox()}
 					<h2>{this.props.description}</h2>
 				</div>
-
 				<ul>
 					{this.props.notes.map( note => {
 						return <li key={this.props.notes.indexOf(note)}>{note}</li>
@@ -27,5 +25,3 @@ class Step extends Component {
 		);
 	}
 }
-
-export default Step;
