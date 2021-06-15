@@ -1,0 +1,72 @@
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400&display=swap");
+
+* {
+	padding: 0;
+	margin: 0;
+	box-sizing: border-box;
+	font-family: "Open Sans", sans-serif;
+	font-weight: 400;
+	color: var(--text-grey);
+	font-size: 14px;
+	scrollbar-width: thin;
+	scrollbar-color: var(--purple) var(--dark-bg);
+}
+
+*::-webkit-scrollbar-track {background-color: var(--dark-bg);}
+*::-webkit-scrollbar {width: 6px;height: 6px;}
+*::-webkit-scrollbar-thumb {background-color: var(--purple);}
+
+:root {
+	--red-grad: linear-gradient(to right, #f84100, #f9d213);
+	--blue-grad: linear-gradient(to right, var(--purple), #538cff);
+	--green-grad: linear-gradient(to right, #007b3d, #b7ff14);
+	--grey-grad: linear-gradient(to right, #141321, #272727);
+
+	--purple: #7240fb;
+	--red: #F85102;
+	--green: #61C127;
+
+	--text-grey: #6b6b88;
+	--tab-grey: #141321;
+
+	--dark-bg: #020013;
+	--light-bg: #4d4d66;
+}
+
+body {
+	background: var(--blue-grad);
+	height: 100vh;
+	padding: 9px;
+}
+
+#root {
+	background-color: var(--dark-bg);
+	border-radius: 8px;
+	padding: 0 42px;
+	height: 100%;
+	display: flex;
+	align-items: center;
+}
+
+#menu, .separator {
+	margin-right: 42px;
+}
+
+button {
+	outline: none;
+	border: none;
+}
+
+h1 {
+	font-size: 30px;
+	color: white;
+}
+
+h2 {
+	font-size: 16px;
+	color: white;
+}
+
+input[type="checkbox"] {
+	margin-right: 0.5em;
+}
