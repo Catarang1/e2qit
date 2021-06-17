@@ -1,5 +1,5 @@
 .tab_border {
-	padding: 6px 2px 2px 2px;
+	padding: 6px 1px 1px 1px;
 	background: var(--blue-grad);
 	border-radius: 8px;
 }
@@ -10,9 +10,6 @@
 	background-color: var(--tab-grey);
 	height:max-content;
 	border-radius: 8px;
-	/* border: solid var(--purple);
-	border-width: 2px;
-	border-top-width: 5px; */
 }
 
 .tab > *:not(:first-child) {
@@ -27,8 +24,36 @@
 	text-transform: capitalize;
 }
 
-.tab_border:first-child ul, .tab_border:first-child ul>li, .tab_border:first-child ul>li>span {
+.tab_border:first-child ul {
 	list-style: none;
 	margin-left: 0;
 	font-size: 16px;
+}
+
+li>img {
+	vertical-align: middle;
+	height: 24px;
+	margin-right: 12px;
+}
+
+.step {
+	margin-bottom: 12px;
+}
+
+input[type="checkbox"] {
+	margin-right: 0.5em;
+}
+
+.step_headline {
+	display: flex;
+	align-items: baseline;
+	margin-bottom: 6px;
+}
+
+ul {
+	margin-left: 1.5em;
+}
+
+.task li {
+	margin-bottom: 6px;
 }

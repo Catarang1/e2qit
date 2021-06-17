@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import './MessageBox.css'
+import './css/messageBox.css'
 import WarningIco from '../assets/warning.svg'
 import NotificationIco from '../assets/alert.svg'
 import Tick from '../assets/m_check.svg'

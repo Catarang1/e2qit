@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import Step from './Step'
-import './Task.css'
+import './css/content.css'
 
 export default class Task extends Component {
 	state = {  }
@@ -13,7 +13,7 @@ export default class Task extends Component {
 	render() {
 		this.completed()
 		return (
-			<div className={"tab_border " + (this.completed() ? "green" : "red")}>
+			<div className={"tab_border task " + (this.completed() ? "green" : "red")}>
 				<div className="tab">
 					<p>Completed by: </p>
 					<h1>{this.props.name}</h1>
@@ -23,8 +23,7 @@ export default class Task extends Component {
 								description={step.description}
 								notes={step.notes}
 								done={step.done}
-								key={this.props.steps.indexOf(step)}
-							/>
+								key={this.props.steps.indexOf(step)} />
 						)
 					} )}
 				</div>

@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import './Step.css'
+import './css/content.css'
 
 export default class Step extends Component {
 

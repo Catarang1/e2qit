@@ -1,9 +1,9 @@
 export const Data = {
 	projects: [
 		{
-			name: "some name",
+			name: "some other name",
 			created: "42. 32. 2023",
-			owner: "Ian",
+			owner: "Jan",
 			contributors: ['Anna', 'Rhod', 'Amelia'],
 			ico: "plane",
 			tasks: [
@@ -28,12 +28,17 @@ export const Data = {
 						{
 							description: "description of task",
 							done: false,
+							notes: ["note to description one", "second note, a nit longer..."],
+						},
+						{
+							description: "description of task",
+							done: true,
 							notes: ["note to description one"],
 						},
 					],
 				},
 				{
-					name: "task two",
+					name: "task whatever",
 					steps: [
 						{
 							description: "description of task",
@@ -48,7 +53,7 @@ export const Data = {
 					],
 				},
 				{
-					name: "task two",
+					name: "task seven",
 					steps: [
 						{
 							description: "description of task",

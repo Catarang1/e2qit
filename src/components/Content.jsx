@@ -1,22 +1,24 @@
 import React, { Component } from 'react';
 import Task from './Task'
-import Tab from './Tab'
+import ProjectInfo from './ProjectInfo'
 
-export default class Scrollwrap extends Component {
+export default class Content extends Component {
 
-	style = {
+	scrollwrapStyle = {
 		flexGrow: 1,
 		minHeight: '100px',
 		height: '100%',
 		overflow: 'scroll hidden',
 		display: 'flex',
-		alignItems: 'center'
+		alignItems: 'center',
+		position: 'relative',
+		paddingRight: "25px"
 	}
 
 	render() {
 		return (
-			<div id="scrollwrap" style={this.style}>
-				<Tab project={this.props.project}></Tab>
+			<div id="scrollwrap" style={this.scrollwrapStyle}>
+				<ProjectInfo project={this.props.project}></ProjectInfo>
 				{this.props.project.tasks.map( task => {
 					return (
 					<Task
