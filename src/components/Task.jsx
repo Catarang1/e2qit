@@ -8,6 +8,16 @@ export default class Task extends Component {
 		return this.props.steps.every(step => step.done)
 	}
 
+	getPercFinished() {
+		let totalSteps = this.props.steps.length
+		let finishedSteps = 0
+		this.props.steps.forEach( step => {
+			step.done && finishedSteps ++
+		});
+
+		return (finishedSteps / totalSteps * 100).toFixed(0)
+	}
+
 	handleCheckboxChange(projectID, taskID, stepIndex) {
 		console.log(projectID, taskID, stepIndex);
 	}
@@ -15,7 +25,7 @@ export default class Task extends Component {
 	render() {
 		return (
 			<div className={"tab_border task " + (this.isDone() ? "green" : "red")}><div className="tab">
-				<p>Completed by: </p>
+				<p>{this.getPercFinished()}% steps completed</p>
 				<h1 onClick={this.props.onTaskNameChangeRequest}>{this.props.name}</h1>
 				{this.props.steps.map((step) => {
 						return <Step

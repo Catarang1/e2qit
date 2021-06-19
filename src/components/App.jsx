@@ -20,9 +20,11 @@ export default class App extends Component {
 	}
 
 	handleMenuSelect = (index) => {
-		const dialog = {show: true, type: "ack", prompt: "you have changed project view"}
-		this.setState({dialog: dialog})
-		this.setState({selectedProject: index})
+		if (this.state.selectedProject !== index) {
+			const dialog = {show: true, type: "ack", prompt: "You have changed project view."}
+			this.setState({dialog: dialog})
+			this.setState({selectedProject: index})
+		}
 	}
 
 	passTasksProp() {

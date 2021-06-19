@@ -9,7 +9,7 @@
 	font-family: 'PT Sans', sans-serif;
 	font-weight: 400;
 	color: var(--text-grey);
-	font-size: 14px;
+	font-size: 16px;
 	scrollbar-width: thin;
 	scrollbar-color: var(--purple) var(--dark-bg);
 }
@@ -19,9 +19,9 @@
 *::-webkit-scrollbar-thumb {background-color: var(--purple);}
 
 :root {
-	--red-grad: linear-gradient(to right, #F80505,  #FF7B36);
+	--red-grad: linear-gradient(to right, #F80505,  #ffb42a);
 	--blue-grad: linear-gradient(to right, var(--purple), #538cff);
-	--green-grad: linear-gradient(to right, #7EE114, #00C993);
+	--green-grad: linear-gradient(to right, #7EE114, #00803f);
 	--grey-grad: linear-gradient(to right, #141321, #272727);
 
 	--purple: #7240fb;
@@ -30,7 +30,7 @@
 	--green: #61C127;
 
 	--text-grey: #6b6b88;
-	--tab-grey: #141321;
+	--tab-grey: #1F1E31;
 
 	--dark-bg: #020013;
 	--light-bg: #4d4d66;
@@ -62,12 +62,12 @@ button, input[type='text'] {
 }
 
 h1 {
-	font-size: 30px;
+	font-size: 32px;
 	color: white;
 }
 
 h2 {
-	font-size: 16px;
+	font-size: 18px;
 	color: white;
 }
 

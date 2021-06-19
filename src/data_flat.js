@@ -1,16 +1,17 @@
 /* each array of objects separate table? */
 /* contributors - short arrays converted to string, parsed on recieve? */
 /* separate IDs for different kinds of arrays */
-
+const date = new Date()
+const dateString = `${date.getDay()}. ${date.getMonth()}. ${date.getFullYear()} `
 export const FlatData = {
 	dialog: {
 		show: false/* ack, bin. txt */
 	},
 	selectedProject: 0,
 	projects: [
-		{name: 'Alpha One', created: 'tue', owner: 'alpha', contributors: 'Anna, Rhod, Amelia', ico: "plane", projectID: 1},
-		{name: 'Beta Two', created: 'wed', owner: 'Jan', contributors: 'Sasha, Tyis', ico: "boat", projectID: 2},
-		{name: 'Tres Pesos', created: 'thu', owner: 'Rach', contributors: 'Anna, Rhod, Amelia', ico: "medal", projectID: 3},
+		{name: 'Alpha One', created: dateString, owner: 'alpha', contributors: 'Anna, Rhod, Amelia', ico: "plane", projectID: 1},
+		{name: 'Beta Two', created: dateString, owner: 'Jan', contributors: 'Sasha, Tyis', ico: "boat", projectID: 2},
+		{name: 'Tres Pesos', created: dateString, owner: 'Rach', contributors: 'Anna, Rhod, Amelia', ico: "medal", projectID: 3},
 	],
 
 	tasks: [
