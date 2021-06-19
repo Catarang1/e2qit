@@ -3,18 +3,15 @@ import './css/content.css'
 
 export default class Step extends Component {
 
-	renderCheckbox() {
-		if (this.props.done) {
-			return <input type="checkbox" defaultChecked />
-		} return <input type="checkbox" />
-	}
-
 	render() {
 		return (
 			<div className="step">
 				<div className="step_headline">
-					{this.renderCheckbox()}
-					<h2>{this.props.description}</h2>
+					{React.createElement('input',
+						{type: 'checkbox',
+						checked: this.props.done,
+						onChange: this.props.onCheckboxChange})}
+					<h2>{this.props.name}</h2>
 				</div>
 				<ul>
 					{this.props.notes.map( note => {

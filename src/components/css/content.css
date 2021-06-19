@@ -1,18 +1,18 @@
 .tab_border {
-	padding: 6px 1px 1px 1px;
+	padding: 6px 2px 2px 2px;
 	background: var(--blue-grad);
 	border-radius: 8px;
 }
 
 .tab {
 	width: 285px;
-	padding: 45px 35px;
+	padding: 45px 35px 30px 35px;
 	background-color: var(--tab-grey);
 	height:max-content;
 	border-radius: 8px;
 }
 
-.tab > *:not(:first-child) {
+.tab > *:not(:first-child, :last-child) {
 	margin-bottom: 12px;
 }
 
@@ -34,9 +34,10 @@ li>img {
 	vertical-align: middle;
 	height: 24px;
 	margin-right: 12px;
+    filter: brightness(0.5) sepia(1) saturate(90) hue-rotate(265deg);
 }
 
-.step {
+.step:not(:last-child) {
 	margin-bottom: 12px;
 }
 

@@ -1,12 +1,15 @@
 import React, { Component } from 'react';
-import {Data} from '../data.js'
+/* import {Data} from '../data.js' */
+
+import {FlatData} from '../data_flat'
 // Component imports
 import Menu from './Menu';
 import Content from './Content';
 import MessageBox from './MessageBox';
 
 export default class App extends Component {
-	state = { ...Data };
+
+	state =  {...FlatData} ;
 
 	shadowStyle = {
 		background: 'linear-gradient(to right, transparent, var(--dark-bg))',
@@ -16,19 +19,69 @@ export default class App extends Component {
 		right: '42px',
 	}
 
+	handleMenuSelect = (index) => {
+		const dialog = {show: true, type: "ack", prompt: "you have changed project view"}
+		this.setState({dialog: dialog})
+		this.setState({selectedProject: index})
+	}
+
+	passTasksProp() {
+		const selectedProjectID = this.state.projects[this.state.selectedProject].projectID
+		const tasks = this.state.tasks.filter(task => task.projectID === selectedProjectID)
+		tasks.forEach(task => task.steps = this.state.steps.filter(step => step.taskID === task.taskID))
+
+		return tasks;
+	}
+
+	handleCheckboxChange = (stepID) => {
+		const newSteps = this.state.steps.map( step => {
+			if (step.id === stepID) step.done = !step.done
+			return step
+		})
+		this.setState({ steps: newSteps})
+	}
+
+	handleTaskNameChangeRequest = (taskID) => {
+		console.log('task ID '+taskID+' name change request');
+		const dialog = {show: true, type: "txt", prompt: "enter new task name...", taskID: taskID}
+		this.setState({dialog: dialog})
+	}
+
+	handleDialogDismiss = () => this.setState({dialog: {show: false}})
+
+	handleDialogAccept = (result) => {
+		if (this.state.dialog.prompt === 'enter new task name...') {
+			const newTasks = this.state.tasks.map( task => {
+				if (task.taskID === this.state.dialog.taskID) task.name = result
+				return task
+			})
+			this.setState({ tasks: newTasks })
+			document.getElementById('messageBoxText').value = ''
+		}
+		this.setState({dialog: {show: false}})
+
+	}
+
 	render() {
 		return (
-			<React.Fragment>
+			<>
 
-				<Menu projects={this.state.projects} />
+				<Menu projects={this.state.projects} onMenuSelect={this.handleMenuSelect} />
 
-				<Content project={this.state.projects[0]}/>
+				<Content
+					project={this.state.projects[this.state.selectedProject]}
+					tasks={this.passTasksProp()}
+					onCheckboxChange={this.handleCheckboxChange}
+					onTaskNameChangeRequest={this.handleTaskNameChangeRequest}/>
 
 				<div style={this.shadowStyle}></div>
 
-				<MessageBox type='context' icon='notification' text='some longer message in message box.. bit longer?'/>
+				<MessageBox
+					dialog={this.state.dialog}
+					onDialogDismiss={this.handleDialogDismiss}
+					onDialogAccept={this.handleDialogAccept}/>
 
-			</React.Fragment>
+			</>
 		);
 	}
 }

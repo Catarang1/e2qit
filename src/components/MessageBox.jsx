@@ -1,23 +1,36 @@
 import React, { Component } from 'react';
 import './css/messageBox.css'
-import WarningIco from '../assets/warning.svg'
-import NotificationIco from '../assets/alert.svg'
+
+import FillIco from '../assets/m_txt.svg'
+import NotificationIco from '../assets/m_ack.svg'
+import DecisionIco from '../assets/m_bin.svg'
+
 import Tick from '../assets/m_check.svg'
 import Cross from '../assets/m_cross.svg'
 
 export default class MessageBox extends Component {
+
 	iconDictionary = {
-		warning: <img src={WarningIco} alt="warning"></img>,
-		notification: <img src={NotificationIco} alt="notification"></img>
+		txt: <img src={FillIco} alt="warning"></img>,
+		ack: <img src={NotificationIco} alt="notification"></img>,
+		bin: <img src={DecisionIco} alt="decide"></img>
+	}
+
+	renderContent() {
+		if (this.props.dialog.type === 'txt') {
+			return <input id="messageBoxText" type="text" placeholder={this.props.dialog.prompt}></input>
+		} else { return <p>{this.props.dialog.prompt}</p> }
 	}
 
 	render() {
 		return (
-			<div id="messageBox">
-				{this.iconDictionary[this.props.icon]}
-				<span>{this.props.text}</span>
-				<img src={Cross} alt="dismiss"></img>
-				<img src={Tick} alt="accept"></img>
+			<div id="messageBox" className={this.props.dialog.show ? "show" : ""}>
+				{this.iconDictionary[this.props.dialog.type]}
+				<span>
+					{this.renderContent()}
+				</span>
+				<img onClick={this.props.onDialogDismiss} src={Cross} alt="dismiss"></img>
+				{this.props.dialog.type !== 'ack' ? <img onClick={() => this.props.onDialogAccept(document.getElementById('messageBoxText').value)} src={Tick} alt="accept"></img> : ""}
 			</div>
 		);
 	}

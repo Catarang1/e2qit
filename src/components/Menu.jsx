@@ -2,6 +2,11 @@ import React, { Component } from "react";
 import "./css/menu.css";
 
 export default class Menu extends Component {
+
+	handleSelect(index) {
+		console.log(index);
+	}
+
 	render() {
 		return (
 			<React.Fragment>
@@ -11,7 +16,8 @@ export default class Menu extends Component {
 						return (
 						<button
 							className={project.ico + " workgroup"}
-							key={this.props.projects.indexOf(project)}>
+							key={this.props.projects.indexOf(project)}
+							onClick={() => this.props.onMenuSelect(this.props.projects.indexOf(project))}>
 
 							<div className="tooltip">{project.name}</div>
 						</button>

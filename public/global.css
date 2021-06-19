@@ -1,10 +1,12 @@
 @import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=PT+Sans&display=swap');
 
 * {
 	padding: 0;
 	margin: 0;
 	box-sizing: border-box;
 	font-family: "Open Sans", sans-serif;
+	font-family: 'PT Sans', sans-serif;
 	font-weight: 400;
 	color: var(--text-grey);
 	font-size: 14px;
@@ -17,12 +19,13 @@
 *::-webkit-scrollbar-thumb {background-color: var(--purple);}
 
 :root {
-	--red-grad: linear-gradient(to right, #f84100, #f9d213);
+	--red-grad: linear-gradient(to right, #F80505,  #FF7B36);
 	--blue-grad: linear-gradient(to right, var(--purple), #538cff);
-	--green-grad: linear-gradient(to right, #007b3d, #b7ff14);
+	--green-grad: linear-gradient(to right, #7EE114, #00C993);
 	--grey-grad: linear-gradient(to right, #141321, #272727);
 
 	--purple: #7240fb;
+	--purple-light: #a185ec;
 	--red: #F85102;
 	--green: #61C127;
 
@@ -53,7 +56,7 @@ body {
 	margin-right: 42px;
 }
 
-button {
+button, input[type='text'] {
 	outline: none;
 	border: none;
 }
@@ -68,8 +71,16 @@ h2 {
 	color: white;
 }
 
-input[type="checkbox"] {
-	margin-right: 0.5em;
+input[type="text"] {
+	padding: 0.5em;
+	background-color: var(--dark-bg);
+	border-radius: 4px;
+	color: white
+}
+
+input[type="text"]::placeholder {
+	color: var(--text-grey) ;
+	opacity: 1;
 }
 
 li {

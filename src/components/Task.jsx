@@ -3,31 +3,33 @@ import Step from './Step'
 import './css/content.css'
 
 export default class Task extends Component {
-	state = {  }
 
-	completed() {
-		let doneState = this.props.steps.map(step => { return step.done })
-		return doneState.every(state => state === true)
+	isDone() {
+		return this.props.steps.every(step => step.done)
+	}
+
+	handleCheckboxChange(projectID, taskID, stepIndex) {
+		console.log(projectID, taskID, stepIndex);
 	}
 
 	render() {
-		this.completed()
 		return (
-			<div className={"tab_border task " + (this.completed() ? "green" : "red")}>
-				<div className="tab">
-					<p>Completed by: </p>
-					<h1>{this.props.name}</h1>
-					{this.props.steps.map(step => {
-						return (
-							<Step
-								description={step.description}
-								notes={step.notes}
-								done={step.done}
-								key={this.props.steps.indexOf(step)} />
-						)
-					} )}
-				</div>
-			</div>
+			<div className={"tab_border task " + (this.isDone() ? "green" : "red")}><div className="tab">
+				<p>Completed by: </p>
+				<h1 onClick={this.props.onTaskNameChangeRequest}>{this.props.name}</h1>
+				{this.props.steps.map((step) => {
+						return <Step
+							key={this.props.steps.indexOf(step)}
+							done={step.done}
+							name={step.name}
+							notes={step.notes}
+							onCheckboxChange={ () => this.props.onCheckboxChange(step.id) }>
+						</Step>
+				})}
+
+
+			</div></div>
 		);
 	}
 }
+

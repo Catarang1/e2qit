@@ -10,6 +10,13 @@
 	background-size: 60%;
 	background-repeat: no-repeat;
 	position: relative;
+	transition-property: border box-shadow;
+	transition: 0.2s ease-in-out;
+}
+
+#menu > button:hover {
+	border-color: var(--purple-light);
+	box-shadow: 0 0 20px 0 var(--purple);
 }
 
 #menu > button.workgroup {
@@ -20,7 +27,7 @@
 #menu > button:nth-last-child(2) {background-image: url(../../assets/settings.svg);}
 #menu > button:nth-last-child(1) {background-image: url(../../assets/cross.svg);}
 
-#menu > button.bell {background: center/60% no-repeat url(../../assets/alert.svg), var(--blue-grad);}
+#menu > button.bell {background: center/60% no-repeat url(../../assets/m_ack.svg), var(--blue-grad);}
 #menu > button.plane {background: center/60% no-repeat url(../../assets/airplane.svg), var(--blue-grad);}
 #menu > button.time {background: center/60% no-repeat url(../../assets/wristwatch.svg), var(--blue-grad);}
 #menu > button.medal {background: center/60% no-repeat url(../../assets/medal.svg), var(--blue-grad);}
