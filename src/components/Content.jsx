@@ -29,6 +29,7 @@ export default class Content extends Component {
 						onTaskNameChangeRequest={(taskID) => this.props.onTaskNameChangeRequest(task.taskID)}>
 					</Task>);
 				})}
+				<div className="tab phantom"><h2>Add Task +</h2></div>
 			</div>
 		);
 	}

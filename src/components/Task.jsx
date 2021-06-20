@@ -27,7 +27,7 @@ export default class Task extends Component {
 			<div className={"tab_border task " + (this.isDone() ? "green" : "red")}><div className="tab">
 				<p>{this.getPercFinished()}% done</p>
 				<h1 onClick={this.props.onTaskNameChangeRequest}>{this.props.name}</h1>
-				<div id="steps">
+				<div className="steps">
 					{this.props.steps.map((step) => {
 							return <Step
 								key={this.props.steps.indexOf(step)}
