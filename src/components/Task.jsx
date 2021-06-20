@@ -25,17 +25,19 @@ export default class Task extends Component {
 	render() {
 		return (
 			<div className={"tab_border task " + (this.isDone() ? "green" : "red")}><div className="tab">
-				<p>{this.getPercFinished()}% steps completed</p>
+				<p>{this.getPercFinished()}% done</p>
 				<h1 onClick={this.props.onTaskNameChangeRequest}>{this.props.name}</h1>
-				{this.props.steps.map((step) => {
-						return <Step
-							key={this.props.steps.indexOf(step)}
-							done={step.done}
-							name={step.name}
-							notes={step.notes}
-							onCheckboxChange={ () => this.props.onCheckboxChange(step.id) }>
-						</Step>
-				})}
+				<div id="steps">
+					{this.props.steps.map((step) => {
+							return <Step
+								key={this.props.steps.indexOf(step)}
+								done={step.done}
+								name={step.name}
+								notes={step.notes}
+								onCheckboxChange={ () => this.props.onCheckboxChange(step.id) }>
+							</Step>
+					})}
+				</div>
 
 
 			</div></div>

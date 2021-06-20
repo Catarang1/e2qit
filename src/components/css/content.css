@@ -1,5 +1,5 @@
 .tab_border {
-	padding: 7px 1px 1px 1px;
+	padding: 10px 2px 2px 2px;
 	background: var(--blue-grad);
 	border-radius: 8px;
 	transition: box-shadow 0.2s ease-in-out;
@@ -18,10 +18,23 @@
 	margin-bottom: 12px;
 }
 
+.tab > #steps {
+    margin-right: -35px;
+    overflow: hidden scroll;
+    padding-right: 30px;
+    max-height: 400px;
+}
+
 .tab_border.red {background: var(--red-grad);}
 .tab_border.red:hover {box-shadow: 0 0 50px 0 #551B00;}
+.tab_border.red > .tab > #steps::-webkit-scrollbar-thumb {background-color: var(--red);}
+.tab_border.red > .tab > #steps {scrollbar-color: var(--red) transparent}
+
 .tab_border.green {background: var(--green-grad);}
 .tab_border.green:hover {box-shadow: 0 0 50px 0 #023d00;}
+.tab_border.green #steps::-webkit-scrollbar-thumb {background-color: var(--green);}
+.tab_border.green > .tab > #steps {scrollbar-color: var(--green) transparent}
+
 .tab_border:not(:last-child) {margin-right: 42px;}
 
 .tab h1 {
